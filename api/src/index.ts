@@ -1,28 +1,21 @@
 import { ApolloServer } from 'apollo-server-express';
 import Express from 'express';
-import { Resolver, Query, buildSchema } from "type-graphql";
+import { buildSchema } from "type-graphql";
 
 import 'reflect-metadata';
 
-@Resolver()
-class HelloWorldResolver {
-    @Query(() => String)
-    async hello() {
-        return 'hello robert';
-    }
-}
 
 const main = async () => {
     const schema = await buildSchema({
-        resolvers: [HelloWorldResolver]
+        resolvers: [__dirname + "/**/*.resolver.ts"],
     })
 
     const apolloServer = new ApolloServer({ schema });
-    
+
     const app = Express();
     apolloServer.applyMiddleware({ app });
 
-    app.listen(8080, () => console.log("Listening on port 4000."))
+    app.listen(8080, () => console.log("Listening on port 8080."))
 }
 
 main();
