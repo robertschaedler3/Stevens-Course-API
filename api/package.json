@@ -1,0 +1,31 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-express": "^2.9.13",
+    "express": "^4.17.1",
+    "graphql": "^14.5.8",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^0.17.5"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.2",
+    "@types/graphql": "^14.5.0",
+    "@types/node": "^12.12.18",
+    "nodemon": "^2.0.2",
+    "ts-node": "^8.5.4",
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.3"
+  }
+}
